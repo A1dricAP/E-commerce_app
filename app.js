@@ -1,5 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const morgan = require("morgan");
+const bodyparser = require("body-parser");
 require("dotenv").config();
 
 //importing routes
@@ -10,13 +12,16 @@ const app = express();
 
 //setting up database
 mongoose
-  .connect(process.env.Database, {
+  .connect(process.env.DATABASE, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,
   })
   .then(() => {
     console.log("Database is connected");
+  })
+  .catch((err) => {
+    return "";
   });
 
 //routes middleware

@@ -17,6 +17,8 @@ const userSchema = new mongoose.Schema(
       required: true,
       unique: 32,
     },
+
+    //for creating a hashed password
     hashed_password: {
       type: String,
       required: true,
@@ -35,5 +37,43 @@ const userSchema = new mongoose.Schema(
       default: [],
     },
   },
+
+  //getting timestamps for each entry
   { timestamps: true }
 );
+
+//creating a virtual field
+
+userSchema
+  .virtual("password")
+
+  //setting the password
+  .set(function (password) {
+    this._password = password;
+    this.salt = uuidv1(); //creating a random string/ invoking the uuid package
+    //will be used to hash the password
+    this.hashed_password = this.encryptPassword(password);
+  })
+  .get(function () {
+    return this._password;
+  });
+
+//used to create methods for the userSchema
+userSchema.methods = {
+  encryptPassword: function (password) {
+    if (!password) return "";
+    try {
+      //createHmac is used to create an encrypted password, of type 'sha1', appending this.salt, which creates a random long string
+      return crypto
+        .createHmac("sha1", this.salt)
+        .update(password)
+        .digest("hex");
+    } catch (err) {
+      return "";
+    }
+  },
+};
+
+//exporting the model called "User", based on the userSchema
+module.exports = mongoose.model("User", userSchema);
+// this "User" model can be used anywhere to create a new User update
