@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose1 = require("mongoose");
 const crypto = require("crypto"); //to hash the passwords generated
 const uuidv1 = require(uuid / v1); //to create unique id strings
 

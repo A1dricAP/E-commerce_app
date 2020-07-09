@@ -10,7 +10,10 @@ const userRoutes = require("./routes/user");
 //app
 const app = express();
 
-//setting up database
+/*setting up database
+FOR DATABASE TO CONNECT, ALWAYS ENSURE, MONGODB CONNECTION COMMAND 
+[mongod --config /usr/local/etc/mongod.conf] IS DECALRED IN TERMINAL
+*/
 mongoose
   .connect(process.env.DATABASE, {
     useNewUrlParser: true,
@@ -21,7 +24,7 @@ mongoose
     console.log("Database is connected");
   })
   .catch((err) => {
-    return "";
+    return err;
   });
 
 //routes middleware
