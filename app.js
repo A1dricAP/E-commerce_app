@@ -20,10 +20,11 @@ mongoose
   });
 
 //routes middleware
-app.use("/api", userRoutes);
+app.use("/api", userRoutes); //using the route created in routes folder.
 
 const port = process.env.PORT || 8000;
 
+//for listening on specified port
 app.listen(port, () => {
   console.log(`Server is running on port : ${port}`);
 });
