@@ -1,10 +1,26 @@
 const express = require("express");
-const app = express();
+const mongoose = require("mongoose");
 require("dotenv").config();
 
-app.get("/", (req, res) => {
-  res.send("Hello from node.");
-});
+//importing routes
+const userRoutes = require("./routes/user");
+
+//app
+const app = express();
+
+//setting up database
+mongoose
+  .connect(process.env.Database, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => {
+    console.log("Database is connected");
+  });
+
+//routes middleware
+app.use(userRoutes);
 
 const port = process.env.PORT || 8000;
 
