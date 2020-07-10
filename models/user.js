@@ -1,9 +1,9 @@
 const mongoose1 = require("mongoose");
 const crypto = require("crypto"); //to hash the passwords generated
-const uuidv1 = require(uuid / v1); //to create unique id strings
+const uuidv1 = require("uuid"); //to create unique id strings
 
 //creating user schema
-const userSchema = new mongoose.Schema(
+const userSchema = new mongoose1.Schema(
   {
     name: {
       type: String,
@@ -75,5 +75,5 @@ userSchema.methods = {
 };
 
 //exporting the model called "User", based on the userSchema
-module.exports = mongoose.model("User", userSchema);
+module.exports = mongoose1.model("User", userSchema);
 // this "User" model can be used anywhere to create a new User update
