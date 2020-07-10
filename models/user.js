@@ -1,7 +1,11 @@
+/*
+the main task of this file up till now, is to define the schema of the user details to be fed as data on the page, which is inserted 
+into the database via the server
+*/
+
 const mongoose = require("mongoose");
 const crypto = require("crypto"); //to hash the passwords generated
 const { v1: uuidv1 } = require("uuid"); //to create unique id strings
-console.log(uuidv1());
 
 //creating user schema
 const userSchema = new mongoose.Schema(
@@ -43,8 +47,9 @@ const userSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-// creating a virtual field
+/************************************************************************************************************************************************/
 
+// creating a virtual field
 userSchema
   .virtual("password")
 
@@ -53,7 +58,7 @@ userSchema
     this._password = password;
     this.salt = uuidv1(); //creating a random string/ invoking the uuid package
     //will be used to hash the password
-    this.hashed_password = this.encryptPassword(password);
+    this.hashed_password = this.encryptPassword(password); // (encryptPassword) method is creating in userSchema.methods
   })
   .get(function () {
     return this._password;
@@ -61,6 +66,8 @@ userSchema
 
 //used to create methods for the userSchema
 userSchema.methods = {
+  //creating encryptPassword method
+
   encryptPassword: function (password) {
     if (!password) return " ";
     try {
@@ -77,4 +84,5 @@ userSchema.methods = {
 
 //exporting the model called "User", based on the userSchema
 module.exports = mongoose.model("User", userSchema);
+//"User" is the name of schema
 // this "User" model can be used anywhere to create a new User update

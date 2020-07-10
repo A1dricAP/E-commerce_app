@@ -1,3 +1,8 @@
+/*
+this file takes care of the routing on the page. the data submitted into this page, will be sent to the controller [/controller.user]
+
+*/
+
 const express = require("express");
 const router = express.Router(); //Router() needs to be invoked. [Creating a router object]
 
