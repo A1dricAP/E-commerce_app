@@ -1,9 +1,10 @@
-const mongoose1 = require("mongoose");
+const mongoose = require("mongoose");
 const crypto = require("crypto"); //to hash the passwords generated
-const uuidv1 = require("uuid"); //to create unique id strings
+const { v1: uuidv1 } = require("uuid"); //to create unique id strings
+console.log(uuidv1());
 
 //creating user schema
-const userSchema = new mongoose1.Schema(
+const userSchema = new mongoose.Schema(
   {
     name: {
       type: String,
@@ -15,7 +16,7 @@ const userSchema = new mongoose1.Schema(
       type: String,
       trim: true,
       required: true,
-      unique: 32,
+      unique: true,
     },
 
     //for creating a hashed password
@@ -42,7 +43,7 @@ const userSchema = new mongoose1.Schema(
   { timestamps: true }
 );
 
-//creating a virtual field
+// creating a virtual field
 
 userSchema
   .virtual("password")
@@ -61,7 +62,7 @@ userSchema
 //used to create methods for the userSchema
 userSchema.methods = {
   encryptPassword: function (password) {
-    if (!password) return "";
+    if (!password) return " ";
     try {
       //createHmac is used to create an encrypted password, of type 'sha1', appending this.salt, which creates a random long string
       return crypto
@@ -75,5 +76,5 @@ userSchema.methods = {
 };
 
 //exporting the model called "User", based on the userSchema
-module.exports = mongoose1.model("User", userSchema);
+module.exports = mongoose.model("User", userSchema);
 // this "User" model can be used anywhere to create a new User update

@@ -36,7 +36,7 @@ app.use(cookieparser());
 //routes middleware
 app.use("/api", userRoutes); //using the route created in routes folder.
 
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 3000;
 
 //for listening on specified port
 app.listen(port, () => {
