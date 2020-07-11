@@ -1,3 +1,8 @@
+/*
+this file has the core task of providing validation to the user input field.
+this file is first exported with the validation function created.
+*/
+
 exports.userSignupValidator = (req, res, next) => {
   //using (next) to move to the other parts of the applcation, otherwise app will hault
   req.check("name", "Name is required. ").notEmpty();
@@ -18,7 +23,7 @@ exports.userSignupValidator = (req, res, next) => {
     .withMessage("Password must contain atleast 1 digit");
   const errors = req.validationErrors();
   if (errors) {
-    const firsterror = errors.map((error) => error.msg)[0];
+    const firsterror = errors.map((error) => error.msg)[0]; //with this validator, "msg" is used for messages.
     return res.status(400).json({
       error: firsterror,
     });

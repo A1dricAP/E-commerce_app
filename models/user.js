@@ -66,8 +66,11 @@ userSchema
 
 //used to create methods for the userSchema
 userSchema.methods = {
-  //creating encryptPassword method
+  authenticate: function (plaintext) {
+    return this.encryptPassword(plaintext) === this.hashed_password;
+  },
 
+  //creating encryptPassword method
   encryptPassword: function (password) {
     if (!password) return " ";
     try {
