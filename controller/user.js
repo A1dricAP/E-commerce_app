@@ -3,6 +3,7 @@ this file takes care of the data recieved from the routes file. the job of this 
 the data into the database and also to create a standard for the input of the user, 
 by importing the schema from [/models/user]
 */
+//
 
 const User = require("../models/user");
 
