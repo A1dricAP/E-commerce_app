@@ -7,7 +7,7 @@ by importing the schema from [/models/user]
 const User = require("../models/user");
 
 //importing json web token
-const jsw = require("jsonwebtoken"); //to generate signed token
+const jwt = require("jsonwebtoken"); //to generate signed token
 
 //importing express-jwt
 const expressJwt = require("express-jwt"); //for authorization check
@@ -56,7 +56,7 @@ exports.signin = (req, res) => {
     }
 
     //if user found, make sure email and password match.
-    //create authenticate method in user model
+    //created authenticate method in user model
     if (!user.authenticate(password)) {
       return res.status(401).json({
         error: "Email and password not matched",
@@ -72,5 +72,16 @@ exports.signin = (req, res) => {
     //return response with user and token to frontend client
     const { _id, name, email, role } = user;
     return res.json({ token, user: { _id, name, email, role } });
+  });
+};
+
+/************************************************************************************************************************/
+
+//for user signout
+
+exports.signout = (req, res) => {
+  res.clearCookie("t");
+  res.json({
+    message: "Signout success",
   });
 };

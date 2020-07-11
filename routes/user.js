@@ -8,7 +8,7 @@ const express = require("express");
 const router = express.Router(); //Router() needs to be invoked. [Creating a router object]
 
 //getting the export function from "../controller/user" directory in the project
-const { signup, signin } = require("../controller/user");
+const { signup, signin, signout } = require("../controller/user");
 
 //getting the export function from "../validator/index" directory in the project
 const { userSignupValidator } = require("../validator/index");
@@ -17,5 +17,9 @@ const { userSignupValidator } = require("../validator/index");
 router.post("/signup", userSignupValidator, signup);
 //first running the user sign up validation, only then it'll go to the next field, that is actually signing up the user
 
+//using the signin function from the imported file. [../controller/user]
 router.post("/signin", signin);
+
+//using the signout function from the imported file. [../controller/user]
+router.get("/signout", signout);
 module.exports = router;

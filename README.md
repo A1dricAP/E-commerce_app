@@ -8,8 +8,8 @@
 [✅] 2] Project setup **Setting up the project**
 [✅] 3] Database Setup **Connecting with the database[MongoDB]**
 [✅] 4] User Signup
-[ ] 5] Validation
-[ ] 6] User signin using JWT **Signing in user after validation is completed; based on [JSON_Web_Token]**
+[✅] 5] Validation
+[✅] 6] User signin using JWT **Signing in user after validation is completed; based on [JSON_Web_Token]**
 [ ] 7] Auth/Admin middleware **Creating middleware, to check whether the user is authenticated or whether the user is an Admin**
 [ ] 8] Categories - create **creating a category for the products**
 [ ] 9] products - CRUD
