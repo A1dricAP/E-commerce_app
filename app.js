@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const morgan = require("morgan");
 const bodyparser = require("body-parser");
 const cookieparser = require("cookie-parser");
+const expressValidator = require("express-validator");
 require("dotenv").config();
 
 //importing routes
@@ -32,11 +33,12 @@ mongoose
 app.use(morgan("dev"));
 app.use(bodyparser.json());
 app.use(cookieparser());
+app.use(expressValidator());
 
 //routes middleware
 app.use("/api", userRoutes); //using the route created in routes folder.
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT;
 
 //for listening on specified port
 app.listen(port, () => {

@@ -1,5 +1,5 @@
 /*
-the main task of this file up till now, is to define the schema of the user details to be fed as data on the page, which is inserted 
+the main task of this file till now, is to define the schema of the user details to be fed as data on the page, which is inserted 
 into the database via the server
 */
 
