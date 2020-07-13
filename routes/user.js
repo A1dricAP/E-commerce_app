@@ -1,25 +1,26 @@
 /*
-this file takes care of the routing on the page. the data submitted into this page, 
-will be sent to the controller [/controller.user]
-
+this file takes in the {userById} function, imported from [../controller/user] 
+and also the {requireSignin} function, imported from [../controller/auth].
+the main task of this file is, to deliver the users profile, defined in the userById function; and take in a custom 
+id no. with the help of the router.param method
 */
 
 const express = require("express");
 const router = express.Router(); //Router() needs to be invoked. [Creating a router object]
 
 //getting the export function from "../controller/user" directory in the project
-const { signup, signin, signout } = require("../controller/user");
+const { userById } = require("../controller/user");
 
-//getting the export function from "../validator/index" directory in the project
-const { userSignupValidator } = require("../validator/index");
+const { requireSignin } = require("../controller/auth");
 
-//using the signup function from the imported file. [../controller/user]
-router.post("/signup", userSignupValidator, signup);
-//first running the user sign up validation, only then it'll go to the next field, that is actually signing up the user
+router.get("/secret/:userId", requireSignin, (req, res) => {
+  res.json({
+    message: req.profile,
+  });
+});
 
-//using the signin function from the imported file. [../controller/user]
-router.post("/signin", signin);
+router.param("userId", userById); //anytime there is "userId" in the route parameter, userById will run.
 
-//using the signout function from the imported file. [../controller/user]
-router.get("/signout", signout);
+/************************************************************************************************************************/
+
 module.exports = router;
