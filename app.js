@@ -9,6 +9,7 @@ require("dotenv").config();
 //importing routes
 const authRoutes = require("./routes/auth");
 const userRoutes = require("./routes/user");
+const categoryRoutes = require("./routes/category");
 
 //app
 const app = express();
@@ -39,6 +40,7 @@ app.use(expressValidator());
 //routes middleware
 app.use("/api", authRoutes); //using the route created in routes folder.
 app.use("/api", userRoutes); //using the route created in routes folder.
+app.use("/api", categoryRoutes); //using the route created in routes folder.
 
 const port = process.env.PORT;
 
