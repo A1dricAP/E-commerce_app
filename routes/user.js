@@ -11,9 +11,9 @@ const router = express.Router(); //Router() needs to be invoked. [Creating a rou
 //getting the export function from "../controller/user" directory in the project
 const { userById } = require("../controller/user");
 
-const { requireSignin } = require("../controller/auth");
+const { requireSignin, isAuth, isAdmin } = require("../controller/auth");
 
-router.get("/secret/:userId", requireSignin, (req, res) => {
+router.get("/secret/:userId", requireSignin, isAuth, isAdmin, (req, res) => {
   res.json({
     message: req.profile,
   });

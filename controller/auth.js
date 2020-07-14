@@ -16,6 +16,9 @@ const expressJwt = require("express-jwt"); //for authorization check
 //name of errorHandler variable has to be same as the name in the [dbErrorHandler] script
 const { errorHandler } = require("../helpers/dbErrorHandler");
 const user = require("../models/user");
+const { token } = require("morgan");
+
+require("dotenv").config();
 
 /************************************************************************************************************************/
 
@@ -66,6 +69,7 @@ exports.signin = (req, res) => {
 
     //generate a signed token with user id and secret
     const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET);
+    res.header("auth-token", token);
 
     //persist the token with name 't', with expiry date
     res.cookie("t", token, { expire: new Date() + 9999 });
@@ -81,10 +85,20 @@ exports.signin = (req, res) => {
 //for user signout
 
 exports.signout = (req, res) => {
-  res.clearCookie("t");
-  res.json({
-    message: "Signout success",
-  });
+  try {
+    res.clearCookie("t");
+    res.json({
+      message: "Success",
+    });
+  } catch (err) {
+    res.json({
+      error: err,
+    });
+  }
+  // res.clearCookie("t");
+  // res.json({
+  //   message: "Signout success",
+  // });
 };
 
 /************************************************************************************************************************/
@@ -97,3 +111,31 @@ exports.requireSignin = expressJwt({
   algorithms: ["HS256"], //algorithm is a must when using express-jwt
   userProperty: "auth",
 });
+
+/************************************************************************************************************************/
+//creating two new middlewares.
+
+//isAuth middleware
+exports.isAuth = (req, res, next) => {
+  console.log(req.auth);
+  // console.log("Profile" + req.profile);
+  // console.log("Profile_id" + req.profile._id);
+  let user = req.profile && req.auth && req.profile._id == req.auth._id; //checking each field; profile, auth and profile._id for the same token and id.
+  if (!user) {
+    return res.status(401).json({
+      error: "Access denied.",
+    });
+  }
+  next();
+};
+
+//isAdmin middleware
+
+exports.isAdmin = (req, res, next) => {
+  if (req.profile.role === 0) {
+    return res.status(403).json({
+      error: "Admin resource, access denied",
+    });
+  }
+  next();
+};

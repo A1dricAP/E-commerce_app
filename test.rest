@@ -1,0 +1,24 @@
+POST http://localhost:3005/api/signup
+Content-Type: application/json
+
+{
+  "name":"Anewuser",
+  "email":"aldric2020@gmail.com",
+  "password":"aaron05"
+}
+
+###
+
+POST http://localhost:3005/api/signin
+Content-Type: application/json
+
+{
+  
+}
+
+
+###
+
+GET http://localhost:3005/api/secret/5f0dcc7004cd5e3ef02d6121
+
+Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjBkY2M3MDA0Y2Q1ZTNlZjAyZDYxMjEiLCJpYXQiOjE1OTQ3NDA4ODV9.KN8oRbQvyiYLaYbtswjEGneJAgm9Seg6xj54a8IXj9U
