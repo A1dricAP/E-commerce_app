@@ -1,6 +1,6 @@
 /*
 this file takes care of the routing on the page. the data submitted into this page, 
-will be sent to the controller [/controller.user]
+will be sent to the controller [../controller.user]
 
 */
 
@@ -15,7 +15,7 @@ const {
   requireSignin,
 } = require("../controller/auth");
 
-//getting the export function from "../validator/index" directory in the project
+//getting the export function from [../validator/index] directory in the project
 const { userSignupValidator } = require("../validator/index");
 
 //using the signup function from the imported file. [../controller/user]
@@ -28,13 +28,6 @@ router.post("/signin", signin);
 //using the signout function from the imported file. [../controller/user]
 router.get("/signout", signout);
 
-router.get("/hello", requireSignin, (req, res) => {
-  try {
-    res.send("Done.");
-  } catch (err) {
-    res.send("error" + err);
-  }
-});
 /************************************************************************************************************************/
 
 module.exports = router;

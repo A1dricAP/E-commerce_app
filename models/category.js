@@ -24,5 +24,5 @@ const categorySchema = new mongoose.Schema(
 
 //exporting the model called "User", based on the userSchema
 module.exports = mongoose.model("Category", categorySchema);
-//"User" is the name of schema
-// this "User" model can be used anywhere to create a new User update
+//"Category" is the name of schema
+// this "Category" model can be used anywhere to create a new category update

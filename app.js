@@ -10,6 +10,7 @@ require("dotenv").config();
 const authRoutes = require("./routes/auth");
 const userRoutes = require("./routes/user");
 const categoryRoutes = require("./routes/category");
+const productRoutes = require("./routes/product");
 
 //app
 const app = express();
@@ -41,6 +42,7 @@ app.use(expressValidator());
 app.use("/api", authRoutes); //using the route created in routes folder.
 app.use("/api", userRoutes); //using the route created in routes folder.
 app.use("/api", categoryRoutes); //using the route created in routes folder.
+app.use("/api", productRoutes); //using the route created in routes folder.
 
 const port = process.env.PORT;
 

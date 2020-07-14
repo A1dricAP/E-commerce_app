@@ -15,7 +15,7 @@ and [requireSignin] function doesn't seem to be working, because it directly pri
 [✅] 5] Validation
 [✅] 6] User signin using JWT **Signing in user after validation is completed; based on [JSON_Web_Token]**
 [✅] 7] Auth/Admin middleware **Creating middleware, to check whether the user is authenticated or whether the user is an Admin**
-[ ] 8] Categories - create **creating a category for the products**
+[✅] 8] Categories - create **creating a category for the products**
 [ ] 9] products - CRUD
 [ ] 10] Products - by arrival, sold, search **All these types will be coming from front end client as a [route_parameter]**
 
