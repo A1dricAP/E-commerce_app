@@ -1,5 +1,6 @@
 /*
 the main task of this file is, to create a {userByid} function and supply it to the user.js file in [../routes/user]
+{userById} function checks for the valid user. if there is no valid user, it returns an error.
 */
 
 const User = require("../models/user");

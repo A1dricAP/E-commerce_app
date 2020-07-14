@@ -1,3 +1,5 @@
+/*This file is basically used to check for existing email ids and inform the user about same during signup. */
+
 "use strict";
 
 /**
