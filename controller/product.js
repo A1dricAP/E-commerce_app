@@ -19,7 +19,7 @@ exports.productById = (req, res, next, id) => {
 };
 
 exports.read = (req, res) => {
-  req.product.photo = undefined;
+  req.product.photo = undefined; //to basically remove the photo information, otherwise req.product will be too big.
   return res.json(req.product);
 };
 
