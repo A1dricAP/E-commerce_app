@@ -1,5 +1,7 @@
 for admin and auth routing, correct id and token is required to be filled in postman.
+
 [signout] may/may not be working rn along with [requireSignin] function, because admin and auth priviledges can still be attained, after signing out user.
+
 and [requireSignin] function doesn't seem to be working, because it directly prints {"hello"} message even after signing out user. _in short, [signout] may not be working, or some complex confusion exists._
 
 # E-commerce_app
@@ -9,12 +11,19 @@ and [requireSignin] function doesn't seem to be working, because it directly pri
 # ROAD MAP
 
 [✅] 1] API **Building the API with Node.JS**
+
 [✅] 2] Project setup **Setting up the project**
+
 [✅] 3] Database Setup **Connecting with the database[MongoDB]**
+
 [✅] 4] User Signup
+
 [✅] 5] Validation
+
 [✅] 6] User signin using JWT **Signing in user after validation is completed; based on [JSON_Web_Token]**
+
 [✅] 7] Auth/Admin middleware **Creating middleware, to check whether the user is authenticated or whether the user is an Admin**
+
 [✅] 8] Categories - create **creating a category for the products**
 [ ] 9] products - CRUD
 [ ] 10] Products - by arrival, sold, search **All these types will be coming from front end client as a [route_parameter]**
