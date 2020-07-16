@@ -69,6 +69,12 @@ exports.(middleware_name)=(req,res)=>{
 import {middleware_name} = require("name_of_file_to_import_from")
 ```
 
+- after creating a router app, the router object needs to be exported. in the following way:
+
+```
+module.exports = router;
+```
+
 ---
 
 ### Few notes
