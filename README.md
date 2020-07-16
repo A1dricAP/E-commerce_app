@@ -53,7 +53,7 @@ The app consists of the main `app.js` file, it also includes other files,
 
 `controller` is a file that takes care of creating all the middlewares for the app. Consists of middlewares for _auth_, _category_, _product_ and _user_.
 
-       - the middlewares created in the controller file needs to be exported first inorder to use it in another file. In the following way:
+- the middlewares created in the controller file needs to be exported first inorder to use it in another file. In the following way:
 
 ```javascript
 exports.(middleware_name)=(req,res)=>{
