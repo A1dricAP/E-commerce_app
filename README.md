@@ -1,16 +1,5 @@
 # E-commerce_app
 
-[Google](www.google.com "Google")
-
-1. first
-1. second
-
-```python
-def (usecase):
-    console.log("Hello World!)
-
-```
-
 Always run the server with the follwoing command:
 
 > npm start
