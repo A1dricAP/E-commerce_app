@@ -23,7 +23,7 @@ const { userById } = require("../controller/user");
 //using the different functions from the imported files. [../controller/user,auth,category]
 router.post("/product/create/:userId", requireSignin, isAdmin, isAuth, create);
 
-//using the fucntion from the imported files. [../controller/product]
+//using the function from the imported files. [../controller/product]
 router.get("/product/:productId", read);
 
 //using the functions [called middlewares] from the imported files. [../controller/product]

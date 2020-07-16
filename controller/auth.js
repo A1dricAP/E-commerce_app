@@ -117,7 +117,7 @@ exports.requireSignin = expressJwt({
 
 //isAuth middleware
 exports.isAuth = (req, res, next) => {
-  console.log(req.auth);
+  // console.log(req.auth);
   // console.log("Profile" + req.profile);
   // console.log("Profile_id" + req.profile._id);
   let user = req.profile && req.auth && req.profile._id == req.auth._id; //checking each field; profile, auth and profile._id for the same token and id.

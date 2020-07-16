@@ -1,12 +1,14 @@
 # E-commerce_app
 
+#### _Always check for spelling errors, it may be a pain in the ass that because of some silly mistakes, one whole function or middleware might not work!_
+
 Always run the server with the follwoing command:
 
 > npm start
 
 ---
 
-## Database
+## **Database**
 
 Along with the server, mongoDB connection also needs to be made and started, with the following command:
 
@@ -28,7 +30,7 @@ ecommerce database has the following collections;
 
 ---
 
-## APP
+## **APP**
 
 The app consists of the main `app.js` file, it also includes other files,
 
@@ -89,31 +91,31 @@ module.exports = router;
 
 **E-commerce app following Ryan D**
 
-## ROAD MAP
+## **ROAD MAP**
 
-[✅] 1] API **Building the API with Node.JS**
+[✅] 1] API _(Building the API with Node.JS)_
 
-[✅] 2] Project setup **Setting up the project**
+[✅] 2] Project setup _(Setting up the project)_
 
-[✅] 3] Database Setup **Connecting with the database[MongoDB]**
+[✅] 3] Database Setup _(Connecting with the database[MongoDB])_
 
 [✅] 4] User Signup
 
 [✅] 5] Validation
 
-[✅] 6] User signin using JWT **Signing in user after validation is completed; based on [JSON_Web_Token]**
+[✅] 6] User signin using JWT _(Signing in user after validation is completed; based on [JSON_Web_Token])_
 
-[✅] 7] Auth/Admin middleware **Creating middleware, to check whether the user is authenticated or whether the user is an Admin**
+[✅] 7] Auth/Admin middleware _(Creating middleware, to check whether the user is authenticated or whether the user is an Admin)_
 
-[✅] 8] Categories - create **creating a category for the products**
+[✅] 8] Categories - create _(creating a category for the products)_
 
 [ ] 9] products - CRUD
 
-[ ] 10] Products - by arrival, sold, search **All these types will be coming from front end client as a [route_parameter]**
+[ ] 10] Products - by arrival, sold, search _(All these types will be coming from front end client as a [route_parameter])_
 
 ---
 
-## REACT CLIENT
+## **REACT CLIENT**
 
 [ ] 1] setup
 
@@ -121,9 +123,9 @@ module.exports = router;
 
 [ ] 3] signin/signup
 
-[ ] 4] admin route/ private route **two separate routes-> [admin]and [private]**
+[ ] 4] admin route/ private route _(two separate routes-> [admin]and [private])_
 
-[ ] 5] user / admin dashboard **two separate dashboards, [user] and [admin]**
+[ ] 5] user / admin dashboard _(two separate dashboards, [user] and [admin])_
 
 [ ] 6] create category
 
@@ -141,29 +143,29 @@ module.exports = router;
 
 [ ] 12] search products with option of category
 
-[ ] 13] single product view **single product to be shown**
+[ ] 13] single product view _(single product to be shown)_
 
-[ ] 14] single product view with related products sidebar **single product view, with related products on the side bar like [Amazon]**
+[ ] 14] single product view with related products sidebar _(single product view, with related products on the side bar like [Amazon])_
 
 [ ] 15] cart page
 
 [ ] 16] add product to cart
 
-[ ] 17] product increment and decrement **to increase or decrease the number of products in the cart**
+[ ] 17] product increment and decrement _(to increase or decrease the number of products in the cart)_
 
 [ ] 18] remove product from cart
 
 [ ] 19] show total
 
-[ ] 20] payment integration using brintree **brintree is a PayPal company, which makes it easy to integrate payment method**
+[ ] 20] payment integration using brintree _(brintree is a PayPal company, which makes it easy to integrate payment method)_
 
-[ ] 21] checkout **checkout after successful completion of payment**
+[ ] 21] checkout _(checkout after successful completion of payment)_
 
 ---
 
-## Backend/ Frontend
+## **Backend/ Frontend**
 
-**alternating between backend and frontend**
+**_alternating between backend and frontend_**
 
 [ ] 1] API - processing payment
 
@@ -181,15 +183,15 @@ module.exports = router;
 
 [ ] 8] view all orders
 
-[ ] 9] order status update **status update such as processing/delivered**
+[ ] 9] order status update (_status update such as processing/delivered_)
 
 [ ] 10] profile update
 
-[ ] 11] product update **any updates to be done by admin**
+[ ] 11] product update (_any updates to be done by admin_)
 
 [ ] 12] deployment
 
-# DONE []
+# **DONE []**
 
 ```
 
