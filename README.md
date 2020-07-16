@@ -6,10 +6,9 @@
 1. second
 
 ```
- npm install
-
- npm downlaod
-
+function(usecase){
+    console.log("Hello World!)
+}
 ```
 
 Always run the server with the follwoing command:
