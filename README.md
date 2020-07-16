@@ -1,14 +1,45 @@
-for admin and auth routing, correct id and token is required to be filled in postman.
-
-[signout] may/may not be working rn along with [requireSignin] function, because admin and auth priviledges can still be attained, after signing out user.
-
-and [requireSignin] function doesn't seem to be working, because it directly prints {"hello"} message even after signing out user. _in short, [signout] may not be working, or some complex confusion exists._
-
 # E-commerce_app
+
+Always run the server with the follwoing command:
+
+> npm start
+
+Along with the server, mongoDB connection also needs to be made and started, with the following command:
+
+> mongod --config /usr/local/etc/mongod.conf
+
+To view the database, run the following command in another terminal
+
+> mongo
+
+The database for this project is called `ecommerce`. on initialising the database, use the following command,
+
+> use ecommerce
+
+ecommerce database has the following collections;
+
+`1. users
+
+2. category
+3. products`
+
+`function (use) { console.log("Hello World!) }`
+
+---
+
+### Few notes
+
+- For admin and auth routing, correct id and token is required to be filled in postman.
+
+- [signout] may/may not be working rn along with [requireSignin] function, because admin and auth priviledges can still be attained, after signing out user.
+
+- And [requireSignin] function doesn't seem to be working, because it directly prints {"hello"} message even after signing out user. _in short, [signout] may not be working, or some complex confusion exists._
+
+---
 
 **E-commerce app following Ryan D**
 
-# ROAD MAP
+## ROAD MAP
 
 [✅] 1] API **Building the API with Node.JS**
 
@@ -32,7 +63,7 @@ and [requireSignin] function doesn't seem to be working, because it directly pri
 
 ---
 
-# REACT CLIENT
+## REACT CLIENT
 
 [ ] 1] setup
 
@@ -80,7 +111,7 @@ and [requireSignin] function doesn't seem to be working, because it directly pri
 
 ---
 
-# Backend/ Frontend
+## Backend/ Frontend
 
 **alternating between backend and frontend**
 
@@ -108,4 +139,4 @@ and [requireSignin] function doesn't seem to be working, because it directly pri
 
 [ ] 12] deployment
 
-# DONE
+# DONE []
