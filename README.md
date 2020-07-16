@@ -1,5 +1,17 @@
 # E-commerce_app
 
+[Google](www.google.com "Google")
+
+1. first
+1. second
+
+```
+ npm install
+
+ npm downlaod
+
+```
+
 Always run the server with the follwoing command:
 
 > npm start
