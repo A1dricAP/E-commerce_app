@@ -5,7 +5,7 @@
 1. first
 1. second
 
-```
+```javascript
 function(usecase){
     console.log("Hello World!)
 }
