@@ -23,18 +23,6 @@ ecommerce database has the following collections;
 2. category
 3. products`
 
-`function (use) {
-  
- console.log("Hello World!)
-  
-}
-
-function(notuse){
-  
- console.log("Not hello"
-  
-}`
-
 ---
 
 ### Few notes
@@ -150,3 +138,7 @@ function(notuse){
 [ ] 12] deployment
 
 # DONE []
+
+```
+
+```
