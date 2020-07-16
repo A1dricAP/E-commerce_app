@@ -10,7 +10,7 @@ and [requireSignin] function doesn't seem to be working, because it directly pri
 
 # ROAD MAP
 
-[✅] 1] API **Building the API with Node.JS**
+\*[x] 1] API **Building the API with Node.JS**
 
 [✅] 2] Project setup **Setting up the project**
 
