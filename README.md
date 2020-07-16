@@ -5,10 +5,10 @@
 1. first
 1. second
 
-```javascript
-function(usecase){
+```python
+def (usecase):
     console.log("Hello World!)
-}
+
 ```
 
 Always run the server with the follwoing command:
