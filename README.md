@@ -12,7 +12,7 @@ and [requireSignin] function doesn't seem to be working, because it directly pri
 
 \*[x] 1] API **Building the API with Node.JS**
 
-[✅] 2] Project setup **Setting up the project**
+\*[] 2] Project setup **Setting up the project**
 
 [✅] 3] Database Setup **Connecting with the database[MongoDB]**
 
