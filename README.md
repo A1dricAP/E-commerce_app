@@ -55,11 +55,11 @@ The app consists of the main `app.js` file, it also includes other files,
 
        - the middlewares created in the controller file needs to be exported first inorder to use it in another file. In the following way:
 
-       ```javascript
-    exports.(middleware_name)=(req,res)=>{
+
+     exports.(middleware_name)=(req,res)=>{
               //body of the code.
-          }
-       ```
+     }
+
 
 `router` is a file that consists of the routing to be done in the app. Consists of routes for _auth_, _category_, _product_, _user_.
 
