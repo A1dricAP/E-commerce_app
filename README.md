@@ -37,9 +37,6 @@ The app consists of the main `app.js` file, it also includes other files,
 1. controller file
 
    - `auth.js`
-
-   `this is auth`
-
    - `category.js`
    - `product.js`
    - `user.js`
