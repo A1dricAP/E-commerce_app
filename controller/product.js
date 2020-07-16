@@ -4,7 +4,10 @@ const _ = require("lodash");
 const Product = require("../models/product");
 const fs = require("fs"); //to get access to the file system.
 const { errorHandler } = require("../helpers/dbErrorHandler");
-// const product = require("../models/product");
+
+/******************************************************************************************************************************/
+
+//this middleware is used to get the product by its ID number and store it in the req.
 
 exports.productById = (req, res, next, id) => {
   Product.findById(id).exec((err, product) => {
@@ -18,10 +21,18 @@ exports.productById = (req, res, next, id) => {
   });
 };
 
+/******************************************************************************************************************************/
+
+//this middleware is only used to read-actually display the information about the product.
+
 exports.read = (req, res) => {
   req.product.photo = undefined; //to basically remove the photo information, otherwise req.product will be too big.
   return res.json(req.product);
 };
+
+/******************************************************************************************************************************/
+
+//this middleware is used to create the product.
 
 exports.create = (req, res) => {
   let form = new formidable.IncomingForm();
@@ -55,7 +66,7 @@ exports.create = (req, res) => {
         //creating this, to keep the file size in check
         return res.status(400).json({
           error:
-            "Error man! Image too BIGGG! Image should be less than 1mb in size.",
+            "Error man! Image toooo BIGGG! Image should be less than 1mb in size.",
         });
       }
       product.photo.data = fs.readFileSync(files.photo.path);
@@ -73,6 +84,10 @@ exports.create = (req, res) => {
   });
 };
 
+/******************************************************************************************************************************/
+
+//this middleware is used to remove the product
+
 exports.remove = (req, res) => {
   let product = req.product;
   product.remove((err, deletedproduct) => {
@@ -87,6 +102,10 @@ exports.remove = (req, res) => {
     });
   });
 };
+
+/******************************************************************************************************************************/
+
+//this middleware is used to update the product.
 
 exports.update = (req, res) => {
   let form = new formidable.IncomingForm();
@@ -136,4 +155,19 @@ exports.update = (req, res) => {
       res.json(result);
     });
   });
+};
+
+/******************************************************************************************************************************/
+
+// By Sale/Arrival
+// by sale = /products?sortBy=sold&order=desc&limit=4
+// by arrival = /products?sortBy=createdAt&order=desc&limit=4
+// if no params are sent, return all products.
+
+exports.list = (req, res) => {
+  let order = req.query.order ? req.query.order : "asc";
+  let sortBy = req.query.sortBy ? req.query.sortBy : "_id";
+  let limit = req.query.limit ? req.query.limit : 6;
+
+  //stopped here (6:07)
 };

@@ -3,6 +3,8 @@ const { errorHandler } = require("../helpers/dbErrorHandler");
 // const Category = require("../models/category");
 // const category = require("../models/category");
 
+/******************************************************************************************************************************/
+
 exports.categoryById = (req, res, next, id) => {
   Category.findById(id).exec((err, category) => {
     console.log(req.category);
@@ -17,6 +19,8 @@ exports.categoryById = (req, res, next, id) => {
     next();
   });
 };
+
+/******************************************************************************************************************************/
 
 exports.create = (req, res) => {
   const category = new Category(req.body);
@@ -35,6 +39,8 @@ exports.read = (req, res) => {
   return res.json(req.category);
 };
 
+/******************************************************************************************************************************/
+
 exports.update = (req, res) => {
   const category = req.category;
   category.name = req.body.name;
@@ -47,6 +53,8 @@ exports.update = (req, res) => {
     res.json(data); //last stopped here !!
   });
 };
+
+/******************************************************************************************************************************/
 
 exports.remove = (req, res) => {
   const category = req.category;
@@ -72,3 +80,5 @@ exports.list = (req, res) => {
     res.json(data);
   });
 };
+
+/******************************************************************************************************************************/

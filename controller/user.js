@@ -5,6 +5,8 @@ the main task of this file is, to create a {userByid} function and supply it to 
 
 const User = require("../models/user");
 
+/******************************************************************************************************************************/
+
 exports.userById = (req, res, next, id) => {
   User.findById(id).exec((err, user) => {
     //to find the user by id number, and execute the preceeding function defined.
@@ -18,3 +20,5 @@ exports.userById = (req, res, next, id) => {
     next(); //because this is a middleware, we've to use next(), so that control flow applies to next function.
   });
 };
+
+/******************************************************************************************************************************/

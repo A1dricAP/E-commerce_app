@@ -109,7 +109,7 @@ module.exports = router;
 
 [✅] 8] Categories - create _(creating a category for the products)_
 
-[ ] 9] products - CRUD
+[✅] 9] products - CRUD
 
 [ ] 10] Products - by arrival, sold, search _(All these types will be coming from front end client as a [route_parameter])_
 
@@ -192,7 +192,3 @@ module.exports = router;
 [ ] 12] deployment
 
 # **DONE []**
-
-```
-
-```
