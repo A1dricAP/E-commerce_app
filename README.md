@@ -34,20 +34,20 @@ ecommerce database has the following collections;
 
 The app consists of the main `app.js` file, it also includes other files,
 
-1. `controller file`
-   - auth.js
-   - category.js
-   - product.js
-   - user.js
-1. `models`
-   - category.js
-   - product.js
-   - user.js
-1. `routes`
-   - auth.js
-   - category.js
-   - product.js
-   - user.js
+1. controller file
+   - `auth.js`
+   - `category.js`
+   - `product.js`
+   - `user.js`
+1. models
+   - `category.js`
+   - `product.js`
+   - `user.js`
+1. routes
+   - `auth.js`
+   - `category.js`
+   - `product.js`
+   - `user.js`
 
 `app.js` is like the main face of the entire app; that takes care of all the routing in the website.
 
