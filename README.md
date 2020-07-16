@@ -18,10 +18,9 @@ The database for this project is called `ecommerce`. on initialising the databas
 
 ecommerce database has the following collections;
 
-`1. users
-
+1. users
 2. category
-3. products`
+3. products
 
 ---
 
