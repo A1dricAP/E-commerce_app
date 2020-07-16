@@ -4,6 +4,10 @@ Always run the server with the follwoing command:
 
 > npm start
 
+---
+
+## Database
+
 Along with the server, mongoDB connection also needs to be made and started, with the following command:
 
 > mongod --config /usr/local/etc/mongod.conf
@@ -21,6 +25,45 @@ ecommerce database has the following collections;
 1. users
 2. category
 3. products
+
+---
+
+## APP
+
+The app consists of the main `app.js` file, it also includes other files,
+
+1. `controller file`
+   - auth.js
+   - category.js
+   - product.js
+   - user.js
+1. `models`
+   - category.js
+   - product.js
+   - user.js
+1. `routes`
+   - auth.js
+   - category.js
+   - product.js
+   - user.js
+
+`app.js` is like the main face of the entire app; that takes care of all the routing in the website.
+
+`models` is a file that is used for creating different models for _category_, _product_, _user_, to be put into the database [mongodb].
+
+`controller` is a file that takes care of creating all the middlewares for the app. Consists of middlewares for _auth_, _category_, _product_ and _user_.
+
+       - the middlewares created in the controller file needs to be exported first inorder to use it in another file. In the following way:
+
+       ```javascript
+    exports.(middleware_name)=(req,res)=>{
+              //body of the code.
+          }
+       ```
+
+`router` is a file that consists of the routing to be done in the app. Consists of routes for _auth_, _category_, _product_, _user_.
+
+- the middlewares from the controller files need to imported first, inorder to place the middleware in the routes.
 
 ---
 
