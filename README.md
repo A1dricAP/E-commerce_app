@@ -23,7 +23,17 @@ ecommerce database has the following collections;
 2. category
 3. products`
 
-`function (use) { console.log("Hello World!) }`
+`function (use) {
+  
+ console.log("Hello World!)
+  
+}
+
+function(notuse){
+  
+ console.log("Not hello"
+  
+}`
 
 ---
 
