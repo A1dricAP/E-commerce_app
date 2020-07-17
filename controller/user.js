@@ -22,3 +22,34 @@ exports.userById = (req, res, next, id) => {
 };
 
 /******************************************************************************************************************************/
+
+exports.read = (req, res) => {
+  //setting the hashed_password & salt to undefined, so that these params dont appear.
+  req.profile.hashed_password = undefined;
+  req.profile.salt = undefined;
+  return res.json(req.profile);
+};
+
+/******************************************************************************************************************************/
+
+// this middleware is used for user to update.
+
+exports.update = (req, res) => {
+  User.findByIdAndUpdate(
+    { _id: req.profile._id },
+    { $set: req.body },
+    { new: true },
+    (err, user) => {
+      if (err) {
+        return res.status(400).json({
+          error: "You are not authorized to perform this action.",
+        });
+      }
+      user.hashed_password = undefined;
+      user.salt = undefined;
+      res.json(user);
+    }
+  );
+};
+
+/******************************************************************************************************************************/

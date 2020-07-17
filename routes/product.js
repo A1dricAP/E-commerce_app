@@ -15,6 +15,10 @@ const {
   remove,
   update,
   list,
+  listRelated,
+  listCategories,
+  listBySearch,
+  photo,
 } = require("../controller/product");
 //and "../controller/auth"
 const { requireSignin, isAuth, isAdmin } = require("../controller/auth");
@@ -59,7 +63,22 @@ router.put(
 
 /******************************************************************************************************************************/
 
+// route to get all products.
 router.get("/products", list);
+
+// route to send all related products to the product Id.
+router.get("/products/related/:productId", listRelated);
+
+//
+router.get("/products/categories", listCategories);
+
+// using post, for the different parameters, so as to get the desired content.
+router.post("/products/by/search", listBySearch);
+
+// router to get the photo
+router.get("/product/photo/:productId", photo);
+
+/******************************************************************************************************************************/
 
 router.param("userId", userById); //anytime there is "userId" in the route parameter, userById will run.
 router.param("productId", productById); //anytime there is "userId" in the route parameter, userById will run.

@@ -9,7 +9,7 @@ const express = require("express");
 const router = express.Router(); //Router() needs to be invoked. [Creating a router object]
 
 //getting the export function from "../controller/user" directory in the project
-const { userById } = require("../controller/user");
+const { userById, read, update } = require("../controller/user");
 
 const { requireSignin, isAuth, isAdmin } = require("../controller/auth");
 
@@ -23,4 +23,8 @@ router.param("userId", userById); //anytime there is "userId" in the route param
 
 /************************************************************************************************************************/
 
+router.get("/user/:userId", requireSignin, isAuth, read);
+router.put("/user/:userId", requireSignin, isAuth, update);
+
+/************************************************************************************************************************/
 module.exports = router;
