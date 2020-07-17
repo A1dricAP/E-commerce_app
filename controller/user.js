@@ -32,7 +32,7 @@ exports.read = (req, res) => {
 
 /******************************************************************************************************************************/
 
-// this middleware is used for user to update.
+// this middleware is used for user to update; whatever field the user wants to update.
 
 exports.update = (req, res) => {
   User.findByIdAndUpdate(
