@@ -72,7 +72,7 @@ exports.signin = (req, res) => {
     res.header("auth-token", token);
 
     //persist the token with name 't', with expiry date
-    res.cookie("t", token, { expire: new Date() + 9999 });
+    res.cookie("cookie", token, { expire: new Date() + 9999 });
 
     //return response with user and token to frontend client
     const { _id, name, email, role } = user;
@@ -86,9 +86,9 @@ exports.signin = (req, res) => {
 
 exports.signout = (req, res) => {
   try {
-    res.clearCookie("t");
+    res.clearCookie("cookie");
     res.json({
-      message: "Success",
+      message: "Signed out, man",
     });
   } catch (err) {
     res.json({
@@ -117,9 +117,6 @@ exports.requireSignin = expressJwt({
 
 //isAuth middleware
 exports.isAuth = (req, res, next) => {
-  // console.log(req.auth);
-  // console.log("Profile" + req.profile);
-  // console.log("Profile_id" + req.profile._id);
   let user = req.profile && req.auth && req.profile._id == req.auth._id; //checking each field; profile, auth and profile._id for the same token and id.
   if (!user) {
     return res.status(401).json({
@@ -139,3 +136,5 @@ exports.isAdmin = (req, res, next) => {
   }
   next();
 };
+
+/************************************************************************************************************************/

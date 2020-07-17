@@ -1,7 +1,5 @@
 const Category = require("../models/category");
 const { errorHandler } = require("../helpers/dbErrorHandler");
-// const Category = require("../models/category");
-// const category = require("../models/category");
 
 /******************************************************************************************************************************/
 
@@ -35,7 +33,6 @@ exports.create = (req, res) => {
 };
 
 exports.read = (req, res) => {
-  // console.log(res.json(req.category));
   return res.json(req.category);
 };
 
@@ -70,6 +67,9 @@ exports.remove = (req, res) => {
     });
   });
 };
+
+/************************************************************************************************************************/
+
 exports.list = (req, res) => {
   Category.find().exec((err, data) => {
     if (err) {
