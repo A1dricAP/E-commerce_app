@@ -113,7 +113,7 @@ module.exports = router;
 
 [✅] 9] products - CRUD
 
-[ ] 10] Products - by arrival, sold, search _(All these types will be coming from front end client as a [route_parameter])_
+[✅] 10] Products - by arrival, sold, search _(All these types will be coming from front end client as a [route_parameter])_
 
 ---
 
