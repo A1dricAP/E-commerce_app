@@ -20,6 +20,22 @@ const app = express();
 FOR DATABASE TO CONNECT, ALWAYS ENSURE, MONGODB CONNECTION COMMAND 
 [mongod --config /usr/local/etc/mongod.conf] IS DECALRED IN TERMINAL
 */
+
+const Uri =
+  "mongodb+srv://Aldric_ap:a1dr1c00@cluster0-mt34g.mongodb.net/cluster?retryWrites=true&w=majority";
+mongoose
+  .connect(Uri, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => {
+    console.log("MongoDB Atlas");
+  })
+  .catch((err) => {
+    return err;
+  });
+
 mongoose
   .connect(process.env.DATABASE, {
     useNewUrlParser: true,
@@ -27,7 +43,7 @@ mongoose
     useUnifiedTopology: true,
   })
   .then(() => {
-    console.log("Database is connected");
+    console.log("MongoDB Database is connected along with ");
   })
   .catch((err) => {
     return err;
