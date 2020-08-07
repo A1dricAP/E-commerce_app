@@ -4,7 +4,7 @@ const _ = require("lodash");
 const Product = require("../models/product");
 const fs = require("fs"); //to get access to the file system.
 const { errorHandler } = require("../helpers/dbErrorHandler");
-// const product = require("../models/product");
+//const product = require("../models/product");
 
 /******************************************************************************************************************************/
 
