@@ -1,4 +1,32 @@
-# E-commerce_app
+## E-commerce_app
+
+This Readme is for the backend of the project.
+
+Following are main dependencies:
+
+<img src="https://img.shields.io/badge/express-v4.17.1-<COLOR>">
+
+`Express` is used as the server; it is the main part of the app.
+
+<img src="https://img.shields.io/badge/mongoose-v5.9.22-<COLOR>">
+
+`Mongoose` is used to communicate with the database.
+
+---
+
+<img src="https://img.shields.io/badge/MongoDB-v4.2.8-blue">
+
+MongoDB is a NoSql Database. Most preferred Db for me.
+
+`mongoose` is used to communicate with the database.
+
+---
+
+<img src="https://img.shields.io/badge/cors-v2.8.5-blue">
+
+cors is used to get past cross origin error.
+
+---
 
 #### _Always check for spelling errors, it may be a pain in the ass that because of some silly mistakes, one whole function or middleware might not work!_
 
