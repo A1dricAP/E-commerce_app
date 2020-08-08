@@ -30,7 +30,11 @@ cors is used to get past cross origin error.
 
 #### _Always check for spelling errors, it may be a pain in the ass that because of some silly mistakes, one whole function or middleware might not work!_
 
-Always run the server with the follwoing command:
+Always run the front-end, React app with the following command, after entering into the client directory.
+
+> npm start
+
+Always run the server with the follwoing command, after entering into the server directory:
 
 > npm start
 
