@@ -163,11 +163,11 @@ module.exports = router;
 
 ## **REACT CLIENT**
 
-[ ] 1] setup
+[✅] 1] setup
 
-[ ] 2] Routing/ menu
+[✅] 2] Routing/ menu
 
-[ ] 3] signin/signup
+[❌] 3] signin/signup
 
 [ ] 4] admin route/ private route _(two separate routes-> [admin]and [private])_
 
