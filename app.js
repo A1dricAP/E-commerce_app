@@ -21,35 +21,35 @@ FOR DATABASE TO CONNECT, ALWAYS ENSURE, MONGODB CONNECTION COMMAND
 [mongod --config /usr/local/etc/mongod.conf] IS DECALRED IN TERMINAL
 */
 
-const Uri =
-"mongodb+srv://Aldric_ap:a1dr1c00@cluster0-mt34g.mongodb.net/cluster?retryWrites=true&w=majority";
+// const Uri =
+// "mongodb+srv://Aldric_ap:a1dr1c00@cluster0-mt34g.mongodb.net/cluster?retryWrites=true&w=majority";
 
-//disabling the Atlas cluster till further requirement.
+// //disabling the Atlas cluster till further requirement.
+// mongoose
+//   .connect(process.env.URI, {
+//     useNewUrlParser: true,
+//     useCreateIndex: true,
+//     useUnifiedTopology: true,
+//   })
+//   .then(() => {
+//     console.log("MongoDB Atlas");
+//   })
+//   .catch((err) => {
+//     return err;
+//   });
+
 mongoose
-  .connect(process.env.URI, {
+  .connect(process.env.DATABASE, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,
   })
   .then(() => {
-    console.log("MongoDB Atlas");
+    console.log("MongoDB Database (Locally) is connected. ");
   })
   .catch((err) => {
     return err;
   });
-
-// mongoose
-//   .connect(process.env.DATABASE, {
-//     useNewUrlParser: true,
-//     useCreateIndex: true,
-//     useUnifiedTopology: true,
-//   })
-  // .then(() => {
-  //   console.log("MongoDB Database (Locally) is connected. ");
-  // })
-  // .catch((err) => {
-  //   return err;
-  // });
 
 //middleware
 app.use(morgan("dev"));
