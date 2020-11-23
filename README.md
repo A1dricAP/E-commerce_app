@@ -2,7 +2,7 @@
 
 ![GitHub top language](https://img.shields.io/github/languages/top/A1dricAP/E-commerce_app)
 ![GitHub repo size](https://img.shields.io/github/repo-size/A1dricAP/E-commerce_app)
-[![GitHub license](https://img.shields.io/github/license/A1dricAP/E-commerce_app)](https://github.com/A1dricAP/E-commerce_app/blob/master/LICENSE)
+
 [![GitHub issues](https://img.shields.io/github/issues/A1dricAP/E-commerce_app)](https://github.com/A1dricAP/E-commerce_app/issues)
 <img src="https://img.shields.io/badge/dependencies-up to date-<COLOR>">
 
@@ -163,11 +163,11 @@ module.exports = router;
 
 ## **REACT CLIENT**
 
-[ ] 1] setup
+[✅] 1] setup
 
-[ ] 2] Routing/ menu
+[✅] 2] Routing/ menu
 
-[ ] 3] signin/signup
+[❌] 3] signin/signup
 
 [ ] 4] admin route/ private route _(two separate routes-> [admin]and [private])_
 
