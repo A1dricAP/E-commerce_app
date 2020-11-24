@@ -10,7 +10,7 @@ This Readme is for the backend of the project.
 
 Following are main dependencies:
 
-<img src="https://img.shields.io/badge/express-v4.17.1-<COLOR>">
+<img src="https://img.shields.io/badge/express-v4.17.1-yellow">
 
 <!--  -->
 
