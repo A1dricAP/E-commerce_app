@@ -12,13 +12,13 @@ Following are main dependencies:
 
 <img src="https://img.shields.io/badge/express-v4.17.1-<COLOR>">
 
-![npm bundle size (version)](https://img.shields.io/bundlephobia/min/express/v4.17.1?label=express)
+<!--  -->
 
 `Express` is used as the server; it is the main part of the app.
 
 <img src="https://img.shields.io/badge/mongoose-v5.9.22-<COLOR>">
 
-![npm bundle size (version)](https://img.shields.io/bundlephobia/min/mongoose/v5.9.22?label=mongoose)
+<!--  -->
 
 `Mongoose` is used to communicate with the database.
 
@@ -26,17 +26,7 @@ Following are main dependencies:
 
 <img src="https://img.shields.io/badge/MongoDB-v4.2.8-blue">
 
-MongoDB is a NoSql Database. Most preferred Db for me.
-
-`mongoose` is used to communicate with the database.
-
----
-
-<img src="https://img.shields.io/badge/cors-v2.8.5-blue">
-
-![npm bundle size (version)](https://img.shields.io/bundlephobia/min/cors/v2.8.5?label=cors)
-
-cors is used to get past cross origin error.
+MongoDB is a NoSql Database. Most preferred Db.
 
 ---
 
