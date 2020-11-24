@@ -43,6 +43,7 @@ mongoose
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,
+    autoIndex: true,
   })
   .then(() => {
     console.log("MongoDB Database (Locally) is connected. ");
